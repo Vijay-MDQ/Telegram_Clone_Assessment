@@ -64,7 +64,7 @@ const ChatWindow = ({ chat, messages, setSelectedChat }) => {
         </Box>
       </Box>
 
-      <Box height="50vh" overflow="auto">
+      <Box height="50vh" overflow="auto" sx={{ scrollbarWidth: "thin" }}>
         <List>
           {messages.map((message, index) => (
             <Grid
