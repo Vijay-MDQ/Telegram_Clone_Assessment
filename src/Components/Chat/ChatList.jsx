@@ -6,6 +6,7 @@ import {
   ListItemAvatar,
   Avatar,
   Box,
+  Typography,
 } from "@mui/material";
 import { deepOrange, deepPurple } from "@mui/material/colors";
 
@@ -15,9 +16,9 @@ const ChatList = ({ chats, onSelectChat }) => {
       p={2}
       sx={{
         width: { xs: "100%", md: "100%", sm: "100%", lg: "100%" },
-        scrollbarWidth: "thin",
+        scrollbarWidth: "none",
       }}
-      height="80vh"
+      height="70vh"
       overflow="auto"
     >
       <List>
@@ -36,8 +37,16 @@ const ChatList = ({ chats, onSelectChat }) => {
                   />
                 </ListItemAvatar>
                 <ListItemText
-                  primary={chat.creator.name}
-                  secondary={chat.status}
+                  primary={
+                    <Typography sx={{ color: "#fff", fontWeight: 600 }}>
+                      {chat.creator.name}
+                    </Typography>
+                  }
+                  secondary={
+                    <Typography sx={{ color: "#fff" }}>
+                      {chat.status}
+                    </Typography>
+                  }
                 />
               </ListItem>
             )}

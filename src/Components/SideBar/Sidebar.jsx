@@ -13,6 +13,10 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import UpdateIcon from "@mui/icons-material/Update";
 import CallIcon from "@mui/icons-material/Call";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import ContactPageIcon from "@mui/icons-material/ContactPage";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import PeopleIcon from "@mui/icons-material/People";
 
 const Sidebar = ({ open, onClose }) => {
   return (
@@ -22,9 +26,10 @@ const Sidebar = ({ open, onClose }) => {
         role="presentation"
         onClick={onClose}
         onKeyDown={onClose}
+        bgcolor=" #3f515a"
+        height="100%"
       >
         <Box
-          bgcolor="#72A0C1"
           padding="10px"
           display="flex"
           flexDirection="column"
@@ -35,55 +40,81 @@ const Sidebar = ({ open, onClose }) => {
             src="/static/images/avatar/1.jpg"
             sx={{ width: 56, height: 56 }}
           />
-          <Typography
-            variant="h6"
-            textAlign="left"
-            gutterBottom
-            align="center"
+          <Box
+            display="flex"
+            flexDirection="row"
+            justifyContent="space-between"
+            alignContent="end"
+            alignItems="end"
             mt={2}
           >
-            Vijayaprasath
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            textAlign="left"
-            gutterBottom
-            align="center"
-            mt={1}
-          >
-            +91-9876543210
-          </Typography>
+            <Box>
+              <Typography
+                variant="subtitle1"
+                textAlign="left"
+                color="#fff"
+                align="center"
+              >
+                Vijayaprasath
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                color="#fff"
+                textAlign="left"
+                align="center"
+              >
+                +91-9876543210
+              </Typography>
+            </Box>
+            <ExpandMoreIcon sx={{ verticalAlign: "bottom", color: "#fff" }} />
+          </Box>
         </Box>
 
         <Divider />
         <List>
           <ListItem button>
-            <CallIcon sx={{ verticalAlign: "middle", mr: 1 }} />
-            <ListItemText primary="Calls" />
+            <CallIcon sx={{ verticalAlign: "middle", mr: 1, color: "#fff" }} />
+            <ListItemText sx={{ color: "#fff" }} primary="Calls" />
           </ListItem>
           <ListItem button>
-            <CallIcon sx={{ verticalAlign: "middle", mr: 1 }} />
-            <ListItemText primary="People Nearby" />
+            <PeopleIcon
+              sx={{ verticalAlign: "middle", mr: 1, color: "#fff" }}
+            />
+            <ListItemText sx={{ color: "#fff" }} primary="People Nearby" />
           </ListItem>
           <ListItem button>
-            <CallIcon sx={{ verticalAlign: "middle", mr: 1 }} />
-            <ListItemText primary="Saved Messages" />
+            <ContactPageIcon
+              sx={{ verticalAlign: "middle", mr: 1, color: "#fff" }}
+            />
+            <ListItemText sx={{ color: "#fff" }} primary="Contacts" />
           </ListItem>
           <ListItem button>
-            <SettingsIcon sx={{ verticalAlign: "middle", mr: 1 }} />
-            <ListItemText primary="Settings" />
+            <BookmarkIcon
+              sx={{ verticalAlign: "middle", mr: 1, color: "#fff" }}
+            />
+            <ListItemText sx={{ color: "#fff" }} primary="Saved Messages" />
+          </ListItem>
+          <ListItem button>
+            <SettingsIcon
+              sx={{ verticalAlign: "middle", mr: 1, color: "#fff" }}
+            />
+            <ListItemText sx={{ color: "#fff" }} primary="Settings" />
           </ListItem>
 
           <Divider />
 
           <ListItem button>
-            <UpdateIcon sx={{ verticalAlign: "middle", mr: 1 }} />
-            <ListItemText primary="Check for Update" />
+            <UpdateIcon
+              sx={{ verticalAlign: "middle", mr: 1, color: "#fff" }}
+            />
+            <ListItemText sx={{ color: "#fff" }} primary="Check for Update" />
           </ListItem>
 
           <ListItem button>
-            <PersonAddIcon sx={{ verticalAlign: "middle", mr: 1 }} />
-            <ListItemText primary="Invite Friends" />
+            <PersonAddIcon
+              sx={{ verticalAlign: "middle", mr: 1, color: "#fff" }}
+            />
+            <ListItemText sx={{ color: "#fff" }} primary="Invite Friends" />
           </ListItem>
         </List>
       </Box>

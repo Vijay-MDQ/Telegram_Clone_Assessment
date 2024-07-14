@@ -10,7 +10,7 @@ import {
   TextField,
   InputAdornment,
 } from "@mui/material";
-import { deepOrange } from "@mui/material/colors";
+import { deepOrange, deepPurple } from "@mui/material/colors";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import CallIcon from "@mui/icons-material/Call";
 import VideocamIcon from "@mui/icons-material/Videocam";
@@ -64,7 +64,7 @@ const ChatWindow = ({ chat, messages, setSelectedChat }) => {
         </Box>
       </Box>
 
-      <Box height="60vh" overflow="auto">
+      <Box height="50vh" overflow="auto">
         <List>
           {messages.map((message, index) => (
             <Grid
@@ -86,12 +86,41 @@ const ChatWindow = ({ chat, messages, setSelectedChat }) => {
                 bgcolor={message.sender_id === 1 ? "#DCF8C6" : "#F0F8FF"}
                 textAlign={message.sender_id === 1 ? "right" : "left"}
               >
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  gap={1}
+                  color="#46739E"
+                  fontWeight={600}
+                >
+                  <Avatar
+                    sx={{
+                      bgcolor:
+                        message.sender_id === 1
+                          ? deepOrange[500]
+                          : deepPurple[500],
+                    }}
+                    alt={message.sender.name}
+                    src="/broken-image.jpg"
+                  />
+                  {message.sender.name}
+                </Box>
                 <ListItem>
                   <ListItemText
-                    primary={message.message}
-                    secondary={`Sent by ${message.sender.name} on ${new Date(
-                      message.created_at
-                    ).toLocaleString()}`}
+                    primary={
+                      <Typography variant="subtitle1">
+                        {message.message}
+                      </Typography>
+                    }
+                    secondary={
+                      <Typography
+                        display="flex"
+                        justifyContent="end"
+                        variant="caption"
+                      >
+                        {new Date(message.created_at).toLocaleString()}
+                      </Typography>
+                    }
                   />
                 </ListItem>
               </Grid>
