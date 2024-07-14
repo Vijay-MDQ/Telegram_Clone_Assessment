@@ -23,7 +23,7 @@ const ChatList = ({ chats, onSelectChat }) => {
     >
       <List>
         {chats?.map((chat, index) => (
-          <Box key={index}>
+          <Box key={index} borderBottom="1px solid rgb(0, 0, 0, 0.1)">
             {chat.creator.name !== null && (
               <ListItem button onClick={() => onSelectChat(chat)}>
                 <ListItemAvatar>
